@@ -15,8 +15,38 @@
   }
 
 const sale = function (article, cant){
-  
+  const art1 = 'shoes';
+  const art2 = 'socks';
+  const art3 = 'shirts';
+  const art4 = 'pants';
+  const ventaOk = 200
+  let retorno = 500;
+
+  switch (article) {
+    case art1:
+      if(cant<=inventory.shoes){ 
+        retorno = ventaOk;
+        inventory.shoes -= cant;
+      }
+    case art2:
+      if(cant<=inventory.socks){ 
+        retorno = ventaOk;
+        inventory.socks -= cant;
+      }
+    case art3:
+      if(cant<=inventory.shirts){ 
+        retorno = ventaOk;
+        inventory.shirts -= cant;
+      }
+    case art4:
+      if(cant<=inventory.pants){ 
+        retorno = ventaOk;
+        inventory.pants -= cant;
+      }
+  }
+  return ventaOk;
 }
+
 
 // TESTS (no modificar)
 console.log(sale('shoes',8) === 200 && inventory.shoes === 2);
